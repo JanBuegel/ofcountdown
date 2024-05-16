@@ -2,42 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover'">
     <title>Countdown</title>
-    <link rel="stylesheet" href="styles.css">
+    
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('bg.jpg');
-            background-size: cover;
-            background-position: center;
-            font-family: 'Vinca Stencil', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            height: 100vh;
-        }
+    @font-face {
+        font-family: 'Vinca Stencil';
+        src: url('fonts/vinca_stencil.ttf') format('truetype');
+    }
 
+    body {
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        background-image: url('bg.jpg');
+        background-size: cover;
+        background-position: center;
+        font-family: 'Vinca Stencil', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        height: 100vh;
+    }
+
+    #countdown {
+        font-size: 10rem;
+        color: white;
+        text-align: center;
+        text-shadow: -2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black, 2px 2px 2px black;
+    }
+
+    @media (max-width: 768px) {
         #countdown {
-            font-size: 10rem;
-            color: white;
-            text-align: center;
-            text-shadow: -2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black, 2px 2px 2px black;
+            font-size: 3rem;
+            padding: 0 1rem;
         }
+    }
 
-        @media (max-width: 768px) {
-            #countdown {
-                font-size: 3rem;
-                padding: 0 1rem;
-            }
-        }
+    @supports(padding:max(0px)) {
+    body, header, footer {
+        padding-left: min(0vmin, env(safe-area-inset-left));
+        padding-right: min(0vmin, env(safe-area-inset-right));
+    }
+}
 
-        @font-face {
-            font-family: 'Vinca Stencil';
-            src: url('fonts/vinca_stencil.ttf') format('truetype');
-        }
     </style>
 </head>
 <body>
