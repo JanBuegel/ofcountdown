@@ -1,6 +1,17 @@
-version: '3'
+version: '3.8'
+
 services:
   web:
     build: .
-    ports:
-      - "3000:3000"
+    container_name: ofcountdown-web
+    restart: always
+    expose:
+      - "3000"
+    environment:
+      - PORT=3000
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    external: true
