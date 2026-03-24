@@ -15,15 +15,24 @@
         background-color: black;
         margin: 0;
         padding: 0;
-        background-image: url('bg.jpg');
-        background-size: cover;
-        background-position: center;
         font-family: 'Vinca Stencil', sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
         height: 100vh;
+        position: relative;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: url('bg.jpg');
+        background-size: cover;
+        background-position: center;
+        filter: blur(3px);
+        z-index: -1;
     }
 
     #countdown {
